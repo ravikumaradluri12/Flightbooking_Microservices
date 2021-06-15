@@ -1,0 +1,24 @@
+<div class="container">
+    <h4 class="text">Flight Details</h4>
+    <table class ="table">
+        <thead>
+            <th>Flight Name</th>
+            <th>Flight Number</th>
+            <th></th>
+        </thead>
+        <button class="btn btn-info" (click) ="routeToAddFlight()">Add Flights</button>
+        <tbody>
+            <tr *ngFor ="let flight of flightList">
+                <td>{{flight.flightName}}</td>
+                <td>{{flight.flightNumber}}</td>
+               <!-- <td><button type="submit" class="btn btn-info" [routerLink]="['updateFlight/',flight.id]" >Update</button></td>-->
+                <td><button type="submit" class="btn btn-info" (click) ="clickToRemove(flight.id)">Delete</button></td>
+                
+                <td><button class="btn btn-info" (click) ="routeToUpdateFlight()">Update</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="isEmpty">
+        <p>No Flights available!!!</p>
+    </div>
+</div>

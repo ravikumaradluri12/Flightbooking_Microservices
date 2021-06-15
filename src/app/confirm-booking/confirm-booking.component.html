@@ -1,0 +1,72 @@
+<div class="container">
+    <h4 class="text-center">Book Tickets</h4>
+    <br/>
+    <form [formGroup]="confirmBookingForm" (ngSubmit)="onSubmit()">
+    <table class ="table table-borderless">
+        <tbody *ngFor ="let ticket of confirmTicket">
+            <!-- <tr>
+                <th>Ticket Number</th>
+                <td>{{ticket.ticketNumber}}</td> 
+            </tr> -->
+            <!-- <tr>
+                <th>Traveller Name</th>
+                <td>{{ticket.passengerName}}</td> 
+            </tr> -->
+            <tr>
+                <th>Flight Name</th>
+                <td>{{ticket.flightName}}</td> 
+            </tr>
+            <tr>
+                <th>Flight Number</th>
+                <td>{{ticket.flightNumber}}</td> 
+            </tr>
+            <tr>
+                <th>Origin</th>
+                <td>{{ticket.source}}</td> 
+            </tr>
+            <tr>
+                <th>Departure</th>
+                <td>{{ticket.destination}}</td> 
+            </tr>
+            <tr>
+                <th>Departure Date</th>
+                <td>{{ticket.departureTime }}</td>
+            </tr> 
+            <tr>
+                <th>Departure Time</th>
+                <td>{{ticket.departureTime }}</td>
+            </tr>
+            <tr>
+                <th>Arrival Time</th>
+                <td>{{ticket.arrivalTime }}</td>
+            </tr>
+            <tr>
+                <th>Journey Hrs</th>
+                <td>{{ticket.durationHrs}}<i>Hrs</i>&nbsp;{{ticket.durationMins}}<i>Mins</i></td>
+            </tr>
+            <!-- <tr>
+                <th>No.Of Travellers</th>
+                <td>{{ticket.noOfPassengers}}</td>
+            </tr> -->
+            <tr>
+                <th>Ticket Rate</th>
+                <td>{{ticket.ticketRate}}</td>
+            </tr> 
+            <tr>
+                <th>Total Travellers</th>
+                <td><input list="noOfPassengers" class="form-control" placeholder="Enter No.of Travellers" formControlName ="noOfPassengers">
+                    <datalist id="noOfPassengers">
+                       <option value = "1">
+                       <option value = "2">
+                       <option value = "3">
+                   </datalist>
+                   <span class="text-danger" *ngIf="(confirmBookingFormControl.noOfPassengers.touched || submitted) && confirmBookingFormControl.noOfPassengers.errors?.required"> Enter No.Of travellers!</span>
+                </td>
+            </tr>
+            <tr>
+                <td><button type="submit" class="btn btn-primary">Proceed to Book</button></td>
+            </tr>  
+        </tbody>     
+    </table>
+</form>
+</div>

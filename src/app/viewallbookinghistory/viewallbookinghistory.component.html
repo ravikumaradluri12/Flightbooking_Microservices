@@ -1,0 +1,41 @@
+<div class="container">
+    <h4 class="text">All Booking History</h4>
+    
+    <table class ="table">
+        <thead>
+            <th>Serial No</th>
+            <th>Ticket Number</th>
+            <th>Traveller Name</th>
+            <th>Flight Name</th>
+            <th>Flight Number</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Departure Date</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Journey Hrs</th>
+            <th>No.of Travellers</th>
+            <th>Ticket Rate</th>
+            <th>Booked Date</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor ="let allBooking of getAllBookings; let i = index">
+                <td>{{i+1}}</td>
+                <td>{{allBooking.ticketNumber}}</td>
+                <td>{{allBooking.passengerName}}</td>
+                <td>{{allBooking.flightName}}</td>
+                <td>{{allBooking.flightNumber}}</td>
+                <td>{{allBooking.source}}</td>
+                <td>{{allBooking.destination}}</td>
+                <td>{{allBooking.departureDate}}</td>
+                <td>{{allBooking.departureTime }}</td>
+                <td>{{allBooking.arrivalTime}}</td>
+                <td>{{allBooking.journeyHrs}}</td>
+                <td>{{allBooking.noOfPassengers}}</td>
+                <td>{{allBooking.ticketRate}}</td>
+                <td>{{allBooking.bookedDate}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

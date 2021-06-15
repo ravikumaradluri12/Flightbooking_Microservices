@@ -1,0 +1,33 @@
+<div class="container">
+    <h4 class="text">Flight Details</h4>
+    <table class ="table">
+        <thead>
+            <th>Flight Name</th>
+            <th>Flight Number</th>
+            <th>Total Seats</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Ticket Rate</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <tr *ngFor ="let flight of flightList">
+                <td>{{flight.flightName}}</td>
+                <td>{{flight.flightNumber}}</td>
+                <td>{{flight.totalSeat}}</td>
+                <td>{{flight.source}}</td>
+                <td>{{flight.destination}}</td>
+                <td>{{flight.departureTime }}</td>
+                <td>{{flight.arrivalTime }}</td>
+                <td>{{flight.ticketRate}}</td>
+                <td><button type="submit" class="btn btn-info" [routerLink]="['updateSheduledFlight/',flight.id]" >Update</button></td>
+                <td><button type="submit" class="btn btn-info" (click) ="clickToRemove(flight.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="isEmpty">
+        <p>No Flights Scheduled!!</p>
+    </div>
+</div>

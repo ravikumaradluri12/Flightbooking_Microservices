@@ -1,0 +1,40 @@
+<div class="container">
+    <h4> Booking History</h4>
+    <table class ="table">
+        <thead>
+            <th>Ticket Number</th>
+            <th>Traveller Name</th>
+            <th>Flight Name</th>
+            <th>Flight Number</th>
+            <th>Origin</th>
+            <th>Departure</th>
+            <th>Departure Date</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th> 
+            <th>Journey Hrs</th>
+            <th>No.Of Travellers</th>         
+            <th>Ticket Rate</th>
+            <th>Booked On</th>
+        </thead>
+        <tbody>
+            <tr *ngFor ="let ticketHistory of bookingHistoryArray">
+                <td>{{ticketHistory.ticketNumber}}</td>
+                <td>{{ticketHistory.passengerName}}</td>
+                <td>{{ticketHistory.flightName}}</td>
+                <td>{{ticketHistory.flightNumber}}</td>
+                <td>{{ticketHistory.source}}</td>
+                <td>{{ticketHistory.destination}}</td>
+                <td>{{ticketHistory.departureDate }}</td>
+                <td>{{ticketHistory.departureTime }}</td>
+                <td>{{ticketHistory.arrivalTime }}</td>
+                <td>{{ticketHistory.journeyHrs}}<i>Hrs</i></td>
+                <td>{{ticketHistory.noOfPassengers}}</td>
+                <td>{{ticketHistory.ticketRate}}</td>
+                <td>{{ticketHistory.bookedDate }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button type="submit" class="btn btn-primary" (click)="routeToSearch()">Okay</button>
+    </div>
+</div>

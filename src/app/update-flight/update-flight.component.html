@@ -1,0 +1,23 @@
+<div class="container">
+    <h4 class="text">Update Flight Details</h4>
+    
+    <div class="login-form">
+        <form #updateFlight = "ngForm" (submit) = "updateFlightList(updateFlight.value)">
+           <div class="form-group">
+              <label>Flight Name</label>
+              <input  type="text" class="form-control" placeholder="Enter Flight Name" [(ngModel)]="flight.flightName" name="flightName" #flightName="ngModel" required ngModel>   
+              <span class="text-danger" *ngIf="flightName.dirty && flightName.invalid"> Enter Flight Name!</span>
+            </div>
+           <div class="form-group">
+            <label>Flight Number</label>
+            <input type="text" class="form-control" placeholder="Enter Flight Number" [(ngModel)]="flight.flightNumber" name="flightNumber" #flightNumber="ngModel" required ngModel>
+            <span class="text-danger" *ngIf="flightNumber.dirty && flightNumber.invalid"> Enter Flight Number!</span>
+         </div>
+           <button type="submit" class="btn btn-secondary">Update</button>
+        </form>
+     </div>
+    <div *ngIf="isUpdated">
+       <h5 class="d-flex justify-content-center">Flight Details Updated !!</h5>
+       <div class="d-flex justify-content-center"><button class="btn btn-success" (click)="routeToFlightDetails()">Okay</button></div>
+    </div>
+ </div>

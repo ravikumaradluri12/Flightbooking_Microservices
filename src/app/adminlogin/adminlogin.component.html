@@ -1,0 +1,23 @@
+<div class="container">
+    <h4 class="text">Admin Login</h4>
+    
+    <div class="login-form d-flex justify-content-center">
+        <form #adminLogin = "ngForm" (submit) = "adminAuthenticate(adminLogin.value)">
+           <div class="form-group">
+              <label>Admin ID</label>
+              <input type="text" class="form-control" placeholder="Admin ID" name="adminId" #adminId="ngModel" required ngModel>
+              <span class="text-danger" *ngIf="adminId.dirty && adminId.invalid"> Enter Admin Id!</span>
+           </div>
+           <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="Password" name="adminPassword" #adminPassword="ngModel" required ngModel>
+              <span class="text-danger" *ngIf="adminPassword.dirty && adminPassword.invalid"> Enter Password!</span>
+            </div>
+           <input type="submit" class="btn btn-secondary" onclick="adminAuthenticate(adminLogin.value)" value="Login"/>
+           <!-- <input type ="button" class="btn btn-secondary" onclick="adminAuthenticate(adminLogin.value)" value="Login"/> -->
+        </form>
+     </div>
+     <div *ngIf = "!isValid">
+        <p style="color:red;"> Incorrect UserName/Password</p>
+     </div>
+</div>
